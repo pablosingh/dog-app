@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import BurguerButton from './BurguerButton';
 
@@ -13,8 +13,9 @@ export const NavBarPhone = () => {
       <NavContainer>
         <div className={`links ${clicked ? 'active' : ''}`}>
           <Link onClick={handleClick} to='/'>Home</Link>
-          <Link onClick={handleClick} to='create'>Create</Link>
-          <Link onClick={handleClick} to='about'>About</Link>
+          <Link onClick={handleClick} to='/create'>Create</Link>
+          <Link onClick={handleClick} to='/about'>About</Link>
+          <Link onClick={handleClick} to='/search'>Search</Link>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />

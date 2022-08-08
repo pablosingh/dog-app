@@ -1,11 +1,21 @@
-
-// import { NavBarPhone } from './NavBarPhone';
+import { Routes, Route } from 'react-router-dom';
+import { NavBarPhone } from './NavBarPhone';
+import { Home } from './Home';
+import { Create } from './Create';
+import { About } from './About';
+import { Search } from './Search';
 import styled from 'styled-components';
 
 export const Body = () => {
     return (
         <ContainerBody>
-            Body
+            <NavBarPhone/>
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route exact path="/create" element={<Create/>}/>
+                <Route exact path="/about" element={<About/>}/>
+                <Route exact path="/search" element={<Search/>}/>
+            </Routes>
         </ContainerBody>
     )
 };

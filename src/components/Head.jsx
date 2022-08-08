@@ -1,52 +1,22 @@
-import { Link } from "react-scroll";
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const Head = () => {
     return (
         <Container>
-            <div className={''}>
-                {/* <Link
-                    className={''}
-                    activeClass={''}
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    >Sobre Mi
+            <div className={'navBar'}>
+                <Link className='linkNavBar' to="/"
+                    >Home
                 </Link>
-                <Link
-                    className={''}
-                    activeClass={''}
-                    to="skills"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    >Habilidades
+                <Link className='linkNavBar' to="/create"
+                    >Create
                 </Link>
-                <Link
-                    className={''}
-                    activeClass={''}
-                    to="proyects"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    >Proyectos
+                <Link className='linkNavBar' to="/about"
+                    >About
                 </Link>
-                <Link
-                    className={''}
-                    activeClass={''}
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}
-                    >Contacto
-                </Link> */}
-            </div>
-            <div className={''}>
+                <Link className='linkNavBar' to="/search"
+                    >Search
+                </Link>
             </div>
         </Container>
     )
@@ -66,5 +36,22 @@ const Container = styled.div`
     background-color: #3a4d54;
     @media(max-width: 768px){
         display: none;
+    }
+    .navBar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .linkNavBar{
+            color: white;
+            margin: 0.5em;
+            padding: 0.5em 1em;
+            border-radius: 1em;
+            text-decoration: none;
+        }
+        .linkNavBar:hover{
+            color: #3a4d54;
+            background-color: white;
+        }
     }
 `;
