@@ -28,6 +28,8 @@ export const NavBarPhone = () => {
 
 const NavContainer = styled.nav`
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   padding: .4rem;
   z-index: 1; 

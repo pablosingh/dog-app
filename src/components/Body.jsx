@@ -27,6 +27,7 @@ const ContainerBody = styled.div`
     @media(max-width: 768px){
         margin-left: 0vw;
         width: 100vw;
+        padding-top: 15vw;
     }
     @media(min-width: 768px){
         margin-left: 15vw;

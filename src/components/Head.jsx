@@ -1,22 +1,21 @@
 import { Link } from 'react-router-dom';
+import { loadCards } from "../redux/actions";
+import { useEffect } from 'react';
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 export const Head = () => {
+    const dispatch = useDispatch();
+    useEffect( () => {
+        dispatch( loadCards() );
+    }, [] );
     return (
         <Container>
             <div className={'navBar'}>
-                <Link className='linkNavBar' to="/"
-                    >Home
-                </Link>
-                <Link className='linkNavBar' to="/create"
-                    >Create
-                </Link>
-                <Link className='linkNavBar' to="/about"
-                    >About
-                </Link>
-                <Link className='linkNavBar' to="/search"
-                    >Search
-                </Link>
+                <Link className='linkNavBar' to="/">Home</Link>
+                <Link className='linkNavBar' to="/create" >Create</Link>
+                <Link className='linkNavBar' to="/about" >About</Link>
+                <Link className='linkNavBar' to="/search">Search </Link>
             </div>
         </Container>
     )
