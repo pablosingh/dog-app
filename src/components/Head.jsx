@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom';
-import { loadCards } from "../redux/actions";
+import { 
+    loadCards, 
+    loadSubCards, 
+    loadPagesCards,
+    setActualPageCards
+ } from "../redux/actions";
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux';
 import styled from "styled-components";
 
 export const Head = () => {
+    const state = useSelector( state => state );
     const dispatch = useDispatch();
     useEffect( () => {
         dispatch( loadCards() );
     }, [] );
+    useEffect( () => {
+        dispatch( loadSubCards() );
+        dispatch( loadPagesCards() );
+        dispatch( setActualPageCards(0) );
+    }, [state.cards] );
     return (
         <Container>
             <div className={'navBar'}>

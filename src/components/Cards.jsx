@@ -6,7 +6,7 @@ export const Cards = () => {
     const state = useSelector( state => state );
     return (
         <Container>
-            { state && state.cards.map( c => <Card dog={c} />) }
+            { state && state.subCards.map( c => <Card dog={c} />) }
         </Container>
     )
 };
