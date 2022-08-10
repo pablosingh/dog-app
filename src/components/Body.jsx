@@ -21,7 +21,6 @@ export const Body = () => {
 };
 
 const ContainerBody = styled.div`
-    background-color: rgba(127, 255, 212, 0.941);
     height: 100vh;
     margin-left: 15vw;
     @media(max-width: 768px){

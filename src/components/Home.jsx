@@ -8,11 +8,11 @@ export const Home = () => {
     const state = useSelector( state => state);
     return (
         <div>
-            Home
+            {/* Home
             <button onClick={ () => dispatch( loadCards() )}>
                 loadCards
             </button>
-            <button onClick={ () => console.log(state) } >Estado</button>
+            <button onClick={ () => console.log(state) } >Estado</button> */}
             <div>
                 <Cards/>
             </div>

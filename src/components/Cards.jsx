@@ -1,11 +1,17 @@
 import { useSelector } from 'react-redux';
 import { Card } from './Card';
+import styled from 'styled-components';
 
 export const Cards = () => {
     const state = useSelector( state => state );
     return (
-        <div>
+        <Container>
             { state && state.cards.map( c => <Card dog={c} />) }
-        </div>
+        </Container>
     )
 };
+
+const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`;

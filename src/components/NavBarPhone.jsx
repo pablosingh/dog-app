@@ -27,6 +27,9 @@ export const NavBarPhone = () => {
 };
 
 const NavContainer = styled.nav`
+  @media(max-width: 768px){
+    background-color: rgba(241,192,201,1);
+  }
   position: fixed;
   top: 0;
   left: 0;

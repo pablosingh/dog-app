@@ -22,7 +22,7 @@ export const Head = () => {
 };
 
 const Container = styled.div`
-    width: 15vw;
+    width: 10vw;
     height: 100vh;
     margin: 0;
     padding: 0; 
@@ -32,7 +32,7 @@ const Container = styled.div`
     justify-content: space-around;
     position: fixed;
     z-index: 1;
-    background-color: #3a4d54;
+    background-color: rgba(103,104,107,255);
     @media(max-width: 768px){
         display: none;
     }
