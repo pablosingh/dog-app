@@ -62,7 +62,7 @@ const ContainerBtn = styled.div`
     flex-wrap: wrap;
     .btn{
         color: black;
-        background-color: rgba(1,120,152,255);
+        background-color: rgba(179,112,115,255);
         border-radius: 0.2em;
         border: none;
         padding: 0.7em;
@@ -70,10 +70,11 @@ const ContainerBtn = styled.div`
         font-size: 1em;
     }
     .btn:hover{
-        background-color: rgb(50, 190, 224);
+        color: #3a4d54;
+        background-color: white;
     }
     .active{
-        background-color: rgba(215, 248, 246, 0.8);
+        background-color: rgba(241,239,238,255);
         font-weight: bold;
     }
 `;

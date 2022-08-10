@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import styled from "styled-components";
+import Filters from "./Filters";
 
 export const Head = () => {
     const state = useSelector( state => state );
@@ -28,6 +29,9 @@ export const Head = () => {
                 <Link className='linkNavBar' to="/create" >Create</Link>
                 <Link className='linkNavBar' to="/about" >About</Link>
                 <Link className='linkNavBar' to="/search">Search </Link>
+            </div>
+            <div>
+                <Filters/>
             </div>
         </Container>
     )

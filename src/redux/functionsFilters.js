@@ -14,17 +14,17 @@
 export function order( array, type, direction ){
     let arrayAux;
     switch(type){
-        case 'attack':
+        case 'weight':
             if( direction==='asc' )
                 arrayAux = array.sort(function (a, b) {
-                    if (a.attack > b.attack) return 1;
-                    else if (a.attack < b.attack) return -1;
+                    if (a.weight > b.weight) return 1;
+                    else if (a.weight < b.weight) return -1;
                     else return 0;
                 });
             else
                 arrayAux = array.sort(function (b, a) {
-                    if (a.attack > b.attack) return 1;
-                    else if (a.attack < b.attack) return -1;
+                    if (a.weight > b.weight) return 1;
+                    else if (a.weight < b.weight) return -1;
                     else return 0;
                 });
             break;

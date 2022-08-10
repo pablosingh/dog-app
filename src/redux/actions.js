@@ -5,10 +5,10 @@ export const LOAD_SUB_CARDS = 'LOAD_SUB_CARDS';
 export const LOAD_SUB_PAGES_CARDS = 'LOAD_SUB_PAGES_CARDS';
 export const ORDER_BY_NAME_ASC = 'ORDER_BY_NAME_ASC';
 export const ORDER_BY_NAME_DES = 'ORDER_BY_NAME_DES';
-export const ORDER_BY_ATTACK_ASC = 'ORDER_BY_ATTACK_ASC';
-export const ORDER_BY_ATTACK_DES = 'ORDER_BY_ATTACK_DES';
+export const ORDER_BY_WEIGHT_ASC = 'ORDER_BY_WEIGHT_ASC';
+export const ORDER_BY_WEIGHT_DES = 'ORDER_BY_WEIGHT_DES';
 export const LOAD_TYPES = 'LOAD_TYPES';
-export const SET_POKEMON = 'SET_POKEMON';
+export const SET_DOG = 'SET_DOG';
 export const SEARCH_BY_ID = 'SEARCH_BY_ID';
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';
 export const FILTERS_BY_TYPES = 'FILTERS_BY_TYPES';
@@ -50,7 +50,7 @@ export function loadCards(){
 };
 
 
-export function searchPokemon(idOrName){
+export function searchDog(idOrName){
     if(isNaN(Number(idOrName)))
         return {
             type: SEARCH_BY_NAME,
@@ -74,13 +74,13 @@ export const loadSubPagesCards = () => ({ type: LOAD_SUB_PAGES_CARDS, payload: n
 // ***********************************************************************************
 export const orderByNameAsc = () => ({ type: ORDER_BY_NAME_ASC, payload: null });
 export const orderByNameDes = () => ({ type: ORDER_BY_NAME_DES, payload: null });
-export const orderByAttackAsc = () => ({ type: ORDER_BY_ATTACK_ASC, payload: null });
-export const orderByAttackDes = () => ({ type: ORDER_BY_ATTACK_DES, payload: null });
+export const orderByWeightAsc = () => ({ type: ORDER_BY_WEIGHT_ASC, payload: null });
+export const orderByWeightDes = () => ({ type: ORDER_BY_WEIGHT_DES, payload: null });
 // ***********************************************************************************
 
 export const filtersByTypes = (types) => ({ type: FILTERS_BY_TYPES, payload: types });
 
-export const addToCards = (pokemon) => ({ type: ADD_TO_CARDS, payload: pokemon });
+export const addToCards = (dog) => ({ type: ADD_TO_CARDS, payload: dog });
 
 export const edit = (pokemon) => ({ type: EDIT, payload: pokemon }); 
 export const deletePokemon = (idApi) => ({ type: DELETE_POKEMON, payload: idApi });

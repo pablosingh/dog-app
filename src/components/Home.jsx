@@ -9,8 +9,7 @@ export const Home = () => {
     const state = useSelector( state => state);
     return (
         <div>
-            Home
-            <button onClick={ () => console.log(state) } >Estado</button>
+            <button onClick={ () => console.log(state) } >Estado-Home</button>
             <div>
                 <Paged/>
                 <Cards/>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import BurguerButton from './BurguerButton';
+import Filters from './Filters';
 
 export const NavBarPhone = () => {
   const [clicked, setClicked] = useState(false);
@@ -16,6 +17,7 @@ export const NavBarPhone = () => {
           <Link onClick={handleClick} to='/create'>Create</Link>
           <Link onClick={handleClick} to='/about'>About</Link>
           <Link onClick={handleClick} to='/search'>Search</Link>
+          <Filters/>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />

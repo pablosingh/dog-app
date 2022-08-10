@@ -7,9 +7,9 @@ import {
     LOAD_SUB_PAGES_CARDS,
     ORDER_BY_NAME_ASC,
     ORDER_BY_NAME_DES,
-    ORDER_BY_ATTACK_ASC,
-    ORDER_BY_ATTACK_DES,
-    SET_POKEMON,
+    ORDER_BY_WEIGHT_ASC,
+    ORDER_BY_WEIGHT_DES,
+    SET_DOG,
     FILTERS_BY_TYPES,
     ADD_TO_CARDS,
     SEARCH_BY_NAME,
@@ -29,7 +29,7 @@ const initialState = {
     maxPageCards: 0,
     types: [],
     // ******************
-    amountForPage: 10,
+    amountForPage: 12,
     dog: {},
     loading: true
 };
@@ -49,11 +49,11 @@ export default (state = initialState, action) => {
         //     };
         case SET_ACTUAL_PAGE_CARDS:
             let setPages = [];
-            if ( action.payload > 4 && action.payload<=state.maxPageCards )
-                for ( let i=action.payload-4; i<=action.payload+4 && i<=state.maxPageCards; i++ )
+            if ( action.payload > 2 && action.payload<=state.maxPageCards )
+                for ( let i=action.payload-2; i<=action.payload+2 && i<=state.maxPageCards; i++ )
                     setPages.push(i);
             else
-                setPages = state.pagesCards.slice(0,9);
+                setPages = state.pagesCards.slice(0,5);
             return {
                 ...state,
                 subPagesCards: [...setPages],
@@ -95,33 +95,35 @@ export default (state = initialState, action) => {
                 ...state,
                 cards: [...order(state.cards, 'name', 'des')]
             };
-        case ORDER_BY_ATTACK_ASC: 
+        case ORDER_BY_WEIGHT_ASC: 
             return {
                 ...state,
-                cards: [...order(state.cards, 'attack', 'asc')]
+                cards: [...order(state.cards, 'weight', 'asc')]
             };
-        case ORDER_BY_ATTACK_DES: 
+        case ORDER_BY_WEIGHT_DES: 
             return {
                 ...state,
-                cards: [...order(state.cards, 'attack', 'des')]
+                cards: [...order(state.cards, 'weight', 'des')]
             };
-        case SET_POKEMON:
+        case SET_DOG:
             return {
                 ...state,
-                pokemon: action.payload
+                dog: action.payload
             };
         case SEARCH_BY_NAME:
-            let pokemon;
-            pokemon = state.cards.find( p => p.name == action.payload);
+            console.log(action.payload);
+            let dog;
+            dog = state.cards.find( p => p.name == action.payload );
+            console.log(dog);
             return {    
                 ...state, 
-                pokemon
+                dog
             };
         case SEARCH_BY_ID:
-            let pokemon2 = state.cards.find( p => p.idApi == action.payload);
+            let dog2 = state.cards.find( p => p.id == action.payload);
             return {
                 ...state, 
-                pokemon: pokemon2
+                dog: dog2
             };
         case FILTERS_BY_TYPES:
             let selectedTypes = [...action.payload];
