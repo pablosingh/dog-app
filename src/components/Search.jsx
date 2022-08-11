@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchDog } from '../redux/actions';
+import { Dog } from './Dog';    
 import styled from 'styled-components';
 
 export const Search = () => {
@@ -32,6 +33,7 @@ export const Search = () => {
                         Search
                     </button>
             </form>
+            <Dog/>
         </ContainerFilters>
     )
 };
