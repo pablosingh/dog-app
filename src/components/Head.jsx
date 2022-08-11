@@ -3,13 +3,16 @@ import {
     loadCards, 
     loadSubCards, 
     loadPagesCards,
-    setActualPageCards
+    setActualPageCards,
+    searchDog
  } from "../redux/actions";
 import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
-import styled from "styled-components";
 import Filters from "./Filters";
+import styled from "styled-components";
+import { gray } from '../styles/colors';
+import { hoverColorText, hoverColorBackground } from '../styles/colors';
 
 export const Head = () => {
     const state = useSelector( state => state );
@@ -21,6 +24,7 @@ export const Head = () => {
         dispatch( loadSubCards() );
         dispatch( loadPagesCards() );
         dispatch( setActualPageCards(0) );
+        dispatch( searchDog(1) );
     }, [state.cards] );
     return (
         <Container>
@@ -48,7 +52,7 @@ const Container = styled.div`
     justify-content: space-around;
     position: fixed;
     z-index: 1;
-    background-color: rgba(103,104,107,255);
+    background-color: ${gray};
     @media(max-width: 768px){
         display: none;
     }
@@ -65,8 +69,8 @@ const Container = styled.div`
             text-decoration: none;
         }
         .linkNavBar:hover{
-            color: #3a4d54;
-            background-color: white;
+            color: ${hoverColorText};
+            background-color: ${hoverColorBackground};
         }
     }
 `;

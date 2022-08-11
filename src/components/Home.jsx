@@ -9,11 +9,11 @@ export const Home = () => {
     const state = useSelector( state => state);
     return (
         <div>
-            <button onClick={ () => console.log(state) } >Estado-Home</button>
-            <div>
+            {/* <button onClick={ () => console.log(state) } >Estado-Home</button>
+            <div> */}
                 <Paged/>
                 <Cards/>
-            </div>
+            {/* </div> */}
         </div>
     )
 };

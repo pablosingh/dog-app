@@ -5,6 +5,7 @@ import {
     setActualPageCards, 
 } from '../redux/actions';
 import styled from 'styled-components';
+import { hoverColorText, hoverColorBackground } from '../styles/colors';
 
 export default function Paged() {
     const pagesCards = useSelector( state => state.subPagesCards);
@@ -63,15 +64,15 @@ const ContainerBtn = styled.div`
     .btn{
         color: black;
         background-color: rgba(179,112,115,255);
-        border-radius: 0.2em;
+        border-radius: 2.2em;
         border: none;
         padding: 0.7em;
-        margin: 1em 1em;
+        margin: 1em 0.5em;
         font-size: 1em;
     }
     .btn:hover{
-        color: #3a4d54;
-        background-color: white;
+        color: ${hoverColorText};
+        background-color: ${hoverColorBackground};
     }
     .active{
         background-color: rgba(241,239,238,255);

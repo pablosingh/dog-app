@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchDog } from '../redux/actions';
 import { Dog } from './Dog';    
 import styled from 'styled-components';
+import { gray } from '../styles/colors';
 
 export const Search = () => {
     const estado = useSelector(state => state);
@@ -53,7 +54,7 @@ const ContainerFilters = styled.div`
         border-radius: 1em;
         margin: 1em 2em;
         padding: 0.5em 1em;
-        background-color: rgba(103,104,107,255);
+        background-color: ${gray};
         color: white;
     }
     .btn:hover{
