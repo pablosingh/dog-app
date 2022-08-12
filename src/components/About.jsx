@@ -7,7 +7,7 @@ export const About = () => {
         <h2>
             Hola! soy Pablo Singh me gusta mucho programar, estudié 2 años 
             Ing. Electrónica, entre otras cosas. Este es el proyecto individual
-            de Pokemons para Soy Henry. Gracias!
+            de Perros para Soy Henry. Gracias!
         </h2>
       </div>
     </Container>

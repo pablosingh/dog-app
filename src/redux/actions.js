@@ -21,6 +21,7 @@ export const SET_LOADING = 'SET_LOADING';
 export function loadCards(){
     return async function (dispatch){
         const all = [];
+        dispatch( { type: SET_LOADING, payload: true } );
         try {
             await fetch( `https://api.thedogapi.com/v1/breeds` )
                 .then( js => js.json() )
@@ -41,6 +42,7 @@ export function loadCards(){
                         });
                     } );
                     dispatch( { type: LOAD_CARDS, payload: all } ) 
+                    dispatch( { type: SET_LOADING, payload: false } )
                 })
                 .catch( err => console.error(err) );
         } catch (e) {
@@ -78,10 +80,10 @@ export const orderByWeightAsc = () => ({ type: ORDER_BY_WEIGHT_ASC, payload: nul
 export const orderByWeightDes = () => ({ type: ORDER_BY_WEIGHT_DES, payload: null });
 // ***********************************************************************************
 
-export const filtersByTypes = (types) => ({ type: FILTERS_BY_TYPES, payload: types });
+// export const filtersByTypes = (types) => ({ type: FILTERS_BY_TYPES, payload: types });
 
 export const addToCards = (dog) => ({ type: ADD_TO_CARDS, payload: dog });
 
-export const edit = (pokemon) => ({ type: EDIT, payload: pokemon }); 
-export const deletePokemon = (idApi) => ({ type: DELETE_POKEMON, payload: idApi });
+// export const edit = (pokemon) => ({ type: EDIT, payload: pokemon }); 
+// export const deletePokemon = (idApi) => ({ type: DELETE_POKEMON, payload: idApi });
 export const setLoading = () => ({ type: SET_LOADING, payload: null});

@@ -62,61 +62,54 @@ export const Create = () => {
             breed_group: data.breed_group,
             life_span: data.life_span,
             origin: data.origin
-            // types: [...validate(checked)]
         }
         console.log(toSend);
-        // console.log(checked);
-        // dispatch( { type: SET_POKEMON, payload: ERROR_POKEMON } )
-        // history.push('/pokemon');
         dispatch( { type: ADD_TO_CARDS, payload: toSend } );
         dispatch( { type: SET_DOG, payload: toSend } );
-        // history.push('/pokemon');
     }
     return (
         <Container>
             <Form>
-                <div>
                 <LabelsAndInputs>
-                        <h2>Create your DOG</h2>
-                        <label htmlFor="name" className={``} >Name 
-                            <input type="text" name="name" className={`inputData`} value={data['name']}
-                            onChange={changing}/></label>
+                    <h2>Create your DOG</h2>
+                    <label htmlFor="name" className={``} >Name 
+                        <input type="text" name="name" className={`inputData`} value={data['name']}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="image" className={``} >Image 
-                            <input type="text" name="image" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="image" className={``} >Image 
+                        <input type="text" name="image" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="temperament" className={``} >temperament 
-                            <input type="text" name="temperament" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="temperament" className={``} >Temperament 
+                        <input type="text" name="temperament" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="height" className={``} >height 
-                            <input type="text" name="height" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="height" className={``} >Height 
+                        <input type="text" name="height" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="weight" className={``} >weight 
-                            <input type="text" name="weight" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="weight" className={``} >Weight 
+                        <input type="text" name="weight" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="bred_for" className={``} >bred_for
-                            <input type="text" name="bred_for" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="bred_for" className={``} >Bred for
+                        <input type="text" name="bred_for" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="breed_group" className={``} >breed_group 
-                            <input type="text" name="breed_group" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="breed_group" className={``} >Breed group 
+                        <input type="text" name="breed_group" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="life_span" className={``} >life_span 
-                            <input type="text" name="life_span" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="life_span" className={``} >Life span 
+                        <input type="text" name="life_span" className={`inputData`}
+                        onChange={changing}/></label>
 
-                        <label htmlFor="origin" className={``} >origin 
-                            <input type="text" name="origin" className={`inputData`}
-                            onChange={changing}/></label>
+                    <label htmlFor="origin" className={``} >Origin 
+                        <input type="text" name="origin" className={`inputData`}
+                        onChange={changing}/></label>
 
-                    </LabelsAndInputs>
                     <ButtonCreate type="submit" onClick={submiting}>Create</ButtonCreate>
-                </div>
+                </LabelsAndInputs>
             </Form>
         </Container>
     )
@@ -130,8 +123,10 @@ const Container = styled.div`
 `;
 
 const Form = styled.form`
+    margin-top: 5vh;
     min-width: 50%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: ${primaryColor};
@@ -148,31 +143,13 @@ const LabelsAndInputs = styled.fieldset`
     border-radius: 0.5em;
     border: none;
     label{
+        display: flex;
         .inputData{
             border: none;
             border-radius: 0.2em;
             padding: 0;
-            margin: 0.5em 0.7em;
-        }
-    }
-`;
-
-const TypesPhone = styled.div`
-    display: flex;
-    flex-direction: column;
-    
-    @media(min-width: 768px){
-        display: none;
-    }
-    div{
-        max-width: 768px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        label{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            margin: 0.5em 2.0em;
+            flex-shrink: 5;
         }
     }
 `;
@@ -188,21 +165,6 @@ const ButtonCreate = styled.button`
     :hover{
         background-color: ${hoverColorBackground};
         color: ${hoverColorText}
-    }
-`;
-
-const ButtonCreatePhone = styled.button`
-    font-size: 1em;
-    background-color: rgba(34, 150, 228, 0.5);
-    border-radius: 0.2em;
-    border: none;
-    padding: 0.5em;
-    margin: 0.7em 2em;
-    :hover{
-        background-color: rgb(50, 190, 224);
-    }
-    @media(min-width: 768px){
-        display: none;
     }
 `;
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
 import { searchDog } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
@@ -9,13 +8,7 @@ export const Card = props => {
     const { 
         id,
         name,
-        height,
-        weight,
-        bred_for,
-        breed_group,
-        life_span,
         temperament,
-        origin, 
         image
     } = props.dog;
     return (

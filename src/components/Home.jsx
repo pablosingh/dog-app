@@ -2,6 +2,7 @@ import { loadCards } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import { Cards } from './Cards';
+import { Loading } from './Loading';
 import Paged from './Paged';
 
 export const Home = () => {
@@ -9,11 +10,13 @@ export const Home = () => {
     const state = useSelector( state => state);
     return (
         <div>
-            {/* <button onClick={ () => console.log(state) } >Estado-Home</button>
-            <div> */}
-                <Paged/>
-                <Cards/>
-            {/* </div> */}
+            { 
+                state.loading ? <Loading/>
+                    : <>
+                        <Paged/>
+                        <Cards/>
+                    </>
+                    }
         </div>
     )
 };

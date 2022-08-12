@@ -42,11 +42,6 @@ export default (state = initialState, action) => {
                 ...state,
                 cards: [...action.payload]
             };
-        // case LOAD_TYPES:
-        //     return {
-        //         ...state,
-        //         types: [...action.payload]
-        //     };
         case SET_ACTUAL_PAGE_CARDS:
             let setPages = [];
             if ( action.payload > 2 && action.payload<=state.maxPageCards )
@@ -113,7 +108,7 @@ export default (state = initialState, action) => {
         case SEARCH_BY_NAME:
             console.log(action.payload);
             let dog;
-            dog = state.cards.find( p => p.name == action.payload );
+            dog = state.cards.find( p => p.name.toLowerCase().includes(action.payload.toLowerCase()) );
             console.log(dog);
             return {    
                 ...state, 
