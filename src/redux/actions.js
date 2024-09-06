@@ -23,10 +23,18 @@ export function loadCards(){
         const all = [];
         dispatch( { type: SET_LOADING, payload: true } );
         try {
-            await fetch( `https://api.thedogapi.com/v1/breeds` )
+            await fetch( `https://api.thedogapi.com/v1/breeds`,{
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'x-api-key': process.env.REACT_APP_API_KEY
+                    },
+                }
+             )
                 .then( js => js.json() )
                 .then( arrayJson => { 
                     console.log(arrayJson);
+                    // console.log(process.env.REACT_APP_API_KEY);
                     arrayJson.forEach( a => {
                         all.push({
                             id: a.id,
